@@ -19,7 +19,7 @@ class handler(BaseHTTPRequestHandler):
             message = f'The capital of {country} is {capital}'
 
         else:
-            message = "Give me a word to define please"
+            message = "Please provide a country to define"
 
         if "capital" in dic:
             url = f'https://restcountries.com/v3.1/capital/{dic["capital"]}'
@@ -31,7 +31,7 @@ class handler(BaseHTTPRequestHandler):
             message = f'{capital} is the capital of {country}'
 
         else:
-            message = "Give me a word to define please"
+            message = "Please provide a capital to define"
 
         self.send_response(200)
         self.send_header('Content-type','text/plain')
