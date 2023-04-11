@@ -7,15 +7,16 @@
 VENV Creation: python3 -m venv .venv
 VENV Activation: source .venv/bin/activate
 
-Initialize App: python3 -m madlib
-
 ### User Acceptance Tests:
-To find a capital name by country:
+*To find a capital name by country:*
+https://capital-finder-git-main-msteeledadzie422.vercel.app/api/capital_finder?country={country}
+Update the country field in curly brackets with the name of a country (remove brackets when complete).
 
 
-To find a country name by capital:
-https://capital-finder-git-main-msteeledadzie422.vercel.app/api/capital_finder?capital=santiago
+*To find a country name by capital:*
+https://capital-finder-git-main-msteeledadzie422.vercel.app/api/capital_finder?capital={capital}
+Update the capital field in curly brackets with the correct name of a country capital (remove brackets when complete).
 
 
 ### Notes/Credits:
-I used ChatGPT to develop a regex solution to parse the template for all words located in curly braces, and to also replace all words in curly braces for the output template.
+TA Adam Owada helped me install the json file reader extension for Chrome which was a gamechanger in being able to parse the API response!
