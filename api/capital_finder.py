@@ -21,19 +21,17 @@ class handler(BaseHTTPRequestHandler):
         else:
             message = "Give me a word to define please"
 
+        if "capital" in dic:
+            url = f'https://restcountries.com/v3.1/capital/{dic["capital"]}'
+            r = requests.get(url)
+            data = r.json()
+            for country_data in data:
+                country = country_data["name"]["common"]
+                capital = country_data["capital"][0]
+            message = f'{capital} is the capital of {country}'
 
-        # if "capital" in dic:
-        #     url =
-        #     r = requests.get(url)
-        #     data = r.json()
-        #     definitions = []
-        #     for word_data in data:
-        #         definition = word_data["meanings"][0]["definitions"][0]["definition"]
-        #         definitions.append(definition)
-        #     message = str(definitions)
-        #
-        # else:
-        #     message = "Give me a word to define please"
+        else:
+            message = "Give me a word to define please"
 
         self.send_response(200)
         self.send_header('Content-type','text/plain')
